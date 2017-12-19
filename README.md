@@ -1,6 +1,6 @@
-Start services:
-
-## Eureka
+## Deployment
+ 
+### Eureka
 
 ```bash
 docker service create --detach=true \
@@ -11,7 +11,7 @@ docker service create --detach=true \
     sandornemeth/eureka-app
 ```
 
-## Config server
+### Config server
 
 ```bash
 docker service create --detach=true \
@@ -21,7 +21,7 @@ docker service create --detach=true \
     sandornemeth/config-server
 ```
 
-## Example application
+### Example application
 
 ```bash
 docker service create --detach=true \
@@ -31,7 +31,7 @@ docker service create --detach=true \
     sandornemeth/book-store
 ```
 
-## Zuul
+### Zuul
 
 ```bash
 docker service create --detach=true \
@@ -41,7 +41,7 @@ docker service create --detach=true \
     sandornemeth/zuul-app
 ```
 
-## Zipkin
+### Zipkin
 
 ```bash
 docker service create --detach=true \
@@ -51,7 +51,7 @@ docker service create --detach=true \
     sandornemeth/zipkin-app
 ```
 
-## Service apps
+### Service apps
 
 ```bash
 docker service create --detach=true \
