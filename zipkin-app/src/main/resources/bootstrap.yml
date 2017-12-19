@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: zipkin-app
+  cloud:
+    config:
+      name: book-store
+      discovery:
+        enabled: true
+        service-id: configserver
+
+eureka:
+  client:
+    region: default
+    registry-fetch-interval-seconds: 5
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/
