@@ -62,4 +62,9 @@ docker service create --detach=true \
     --name=rating-store \
     --network=clusternet \
     sandornemeth/rating-store
+docker service create --detach=true \
+    --name=book-rating-aggregator \
+    --publish=19080:8080 \
+    --network=clusternet \
+    sandornemeth/book-rating-aggregator
 ```
