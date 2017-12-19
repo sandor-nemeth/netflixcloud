@@ -15,5 +15,6 @@
     <module>book-store</module>
     <module>rating-store</module>
     <module>book-rating-aggregator</module>
+    <module>model</module>
   </modules>
 </project>
