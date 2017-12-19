@@ -17,7 +17,6 @@ docker service create --detach=true \
 docker service create --detach=true \
     --name=configserver \
     --network=clusternet \
-    --publish=18888:8888 \
     -e SPRING_CLOUD_CONFIG_SERVER_GIT_URI=https://github.com/sandor-nemeth/netflixcloud-config.git \
     sandornemeth/config-server
 ```
