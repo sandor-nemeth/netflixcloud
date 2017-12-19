@@ -41,40 +41,13 @@ public class RatingController {
     }
 
     @GetMapping(value = {"/books/{bookId}/average"}, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public Double findBookAverageRating(long bookId) {
+    public Double findBookAverageRating(@PathVariable("bookId") long bookId) {
         return this.ratings.stream()
                 .filter(rating -> Objects.equals("book", rating.getType()))
                 .filter(rating -> bookId == rating.getObjectId())
                 .mapToInt(Rating::getRating)
                 .average()
                 .orElseGet(() -> 0.0);
-    }
-
-    public static class Rating {
-        private long objectId;
-        private String type;
-        private int rating;
-
-        public Rating() {
-        }
-
-        public Rating(long objectId, String type, int rating) {
-            this.objectId = objectId;
-            this.type = type;
-            this.rating = rating;
-        }
-
-        public long getObjectId() {
-            return objectId;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public int getRating() {
-            return rating;
-        }
     }
 
 }
