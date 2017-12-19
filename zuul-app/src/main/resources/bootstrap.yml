@@ -3,12 +3,14 @@ spring:
     name: zuul-app
   cloud:
     config:
-      name: book-store
+      name: zuul-app
       discovery:
         enabled: true
         service-id: configserver
 
 eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.int}
   client:
     region: default
     registry-fetch-interval-seconds: 5
